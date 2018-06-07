@@ -12,8 +12,17 @@ pipeline {
       }
     }
     stage('peikang_report') {
-      steps {
-        junit 'peikang_result'
+      parallel {
+        stage('peikang_report') {
+          steps {
+            junit 'peikang_result'
+          }
+        }
+        stage('walter_cov') {
+          steps {
+            cobertura(coberturaReportFile: 'target/site/cobertura/coverage.xml')
+          }
+        }
       }
     }
   }
