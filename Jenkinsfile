@@ -11,7 +11,7 @@ pipeline {
         sh 'mvn cobertura:cobertura test'
       }
     }
-    stage('peikang_report') {
+    stage('walter_report') {
       parallel {
         stage('walte_report') {
           steps {
