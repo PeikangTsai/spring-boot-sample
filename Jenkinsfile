@@ -27,8 +27,8 @@ pipeline {
     }
     stage('end') {
       steps {
-        archiveArtifacts 'target/*.jar'
         sh 'mvn package'
+        archiveArtifacts 'target/*.jar'
       }
     }
   }
