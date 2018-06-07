@@ -11,6 +11,11 @@ pipeline {
         sh 'mvn cobertura:cobertura test'
       }
     }
+    stage('peikang_report') {
+      steps {
+        junit 'peikang_result'
+      }
+    }
   }
   post {
     always {
