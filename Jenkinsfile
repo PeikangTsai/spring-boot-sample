@@ -25,6 +25,13 @@ pipeline {
         }
       }
     }
+    stage('peikang_packet') {
+      steps {
+        archiveArtifacts 'target/*.jar'
+        sh '''mvn package
+'''
+      }
+    }
   }
   post {
     always {
