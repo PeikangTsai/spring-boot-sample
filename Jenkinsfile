@@ -15,7 +15,7 @@ pipeline {
       parallel {
         stage('walte_report') {
           steps {
-            sh 'target/surefire-reports/*.xml'
+            junit 'target/surefire-reports/*.xml'
           }
         }
         stage('walter_cov') {
@@ -27,8 +27,8 @@ pipeline {
     }
     stage('end') {
       steps {
-        sh 'mvn package'
         archiveArtifacts 'target/*.jar'
+        sh 'mvn package'
       }
     }
   }
