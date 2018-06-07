@@ -18,7 +18,7 @@ pipeline {
             junit 'peikang_result'
           }
         }
-        stage('walter_cov') {
+        stage('peiknag_cov') {
           steps {
             cobertura(coberturaReportFile: 'target/site/cobertura/coverage.xml')
           }
