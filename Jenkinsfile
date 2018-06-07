@@ -15,7 +15,7 @@ pipeline {
       parallel {
         stage('peikang_report') {
           steps {
-            junit 'peikang_result'
+            junit 'target/surefire-reports/*.xml'
           }
         }
         stage('peiknag_cov') {
